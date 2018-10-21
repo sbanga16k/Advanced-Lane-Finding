@@ -115,10 +115,6 @@ The video file is generated using `VideoFileClip` function of `moveipy.editor` m
 
 [![Watch the video](https://github.com/sbanga16k/Advanced-Lane-Finding/blob/master/Video_output_thumbnail.png?raw=true)](https://github.com/sbanga16k/Advanced-Lane-Finding/blob/master/project_video_output.mp4)
 
-<video width="640" height="360" controls>
-  <source src=""https://github.com/sbanga16k/Advanced-Lane-Finding/blob/master/project_video_output.mp4" type="video/mp4">
-</video>
-
 ### Discussion
 
 I used a combination of absolute gradient threshold and color thresholds from different colorspaces to identify lane lines in images. I also used sliding fit approach for identifying pixels belonging to each lane line and a class to keep track of the mean positions of the lane lines and their fits for a few previous frames.
