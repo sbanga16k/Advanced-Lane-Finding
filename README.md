@@ -20,7 +20,7 @@ I start by preparing "object points", which are the (x, y, z) world coordinates 
 
 I then use the output 'obj_pts' and 'img_pts' to compute the camera calibration and distortion coefficients using the cv2.calibrateCamera() function. I applied this distortion correction using the cv2.undistort() function to a few calibration images and obtained the following result:
 
-![Alt Text](https://github.com/sbanga16k/Advanced-Lane-Finding/blob/master/output_images/img_dist_correction.jpg?raw=true "Distortion-corrected calibration images")
+![Alt Text](https://github.com/sbanga16k/Advanced-Lane-Finding/blob/master/output_images/img_dist_correction.JPG?raw=true "Distortion-corrected calibration images")
 
 
 ## Pipeline (single image)
@@ -29,11 +29,11 @@ I then use the output 'obj_pts' and 'img_pts' to compute the camera calibration 
 
 For all of the following steps, I chose to visualize the various steps of the pipeline using the following test image:
 
-![Alt Text](https://github.com/sbanga16k/Advanced-Lane-Finding/blob/master/output_images/img_test_car.jpg raw=true "Car test image")
+![Alt Text](https://github.com/sbanga16k/Advanced-Lane-Finding/blob/master/output_images/img_test_car.JPG?raw=true "Car test image")
 
 The result obtained after distortion correction of the test image is depicted below: 
 
-![Alt Text](https://github.com/sbanga16k/Advanced-Lane-Finding/blob/master/output_images/img_dist_correction_car.jpg?raw=true "Distortion-corrected car test image")
+![Alt Text](https://github.com/sbanga16k/Advanced-Lane-Finding/blob/master/output_images/img_dist_correction_car.JPG?raw=true "Distortion-corrected car test image")
 
 The effects of distortion correction are not very evident in the image except for on the hood of the car appearing on the bottom edge of the image.
 
@@ -52,7 +52,7 @@ After visulaizing the outputs of each of the channels for the aforementioned col
 
 Therefore, a combination of the above two channels and x-gradient absolute thresholding were used to capture lane lines in images clearly. The output is depicted below:
 
-![Alt Text](https://github.com/sbanga16k/Advanced-Lane-Finding/blob/master/output_images/img_binary.jpg?raw=true "Binary thresholded test image")
+![Alt Text](https://github.com/sbanga16k/Advanced-lane-finding/blob/master/output_images/img_binary.JPG?raw=true "Binary thresholded test image")
 
 ### Step 4: Image rectification ("bird's-eye view" transform)
 
@@ -68,29 +68,29 @@ Source      Destination
 
 I validated the correctness of my perspective transform implementation by drawing the src and dst points onto a test image and its warped counterpart to verify if the lane lines appear parallel in the warped image. This is depicted below:
 
-![Alt Text](https://github.com/sbanga16k/Advanced-Lane-Finding/blob/master/output_images/img_warped1.jpg?raw=true "Original image - source points drawn")
+![Alt Text](https://github.com/sbanga16k/Advanced-Lane-Finding/blob/master/output_images/img_warped1.JPG?raw=true "Original image - source points drawn")
 
-![Alt Text](https://github.com/sbanga16k/Advanced-Lane-Finding/blob/master/output_images/img_warped2.jpg?raw=true "Warped image")
+![Alt Text](https://github.com/sbanga16k/Advanced-Lane-Finding/blob/master/output_images/img_warped2.JPG?raw=true "Warped image")
 
 ### Step 5: Detection of lane pixels and fitting polynomial to lane lines
 
 I used the histogram of binary activations for the bottom quarter of the binary warped image to identify the lane lines corresponding to the peaks in the histogram to the left and right of the vertical half of the image.
 
 The histogram for the test image is shown below:
-![Alt Text](https://github.com/sbanga16k/Advanced-Lane-Finding/blob/master/output_images/img_binary_hist.jpg?raw=true "Test image binary activation histogram")
+![Alt Text](https://github.com/sbanga16k/Advanced-Lane-Finding/blob/master/output_images/img_binary_hist.JPG?raw=true "Test image binary activation histogram")
 
 Pixels corresponding to the lane lines were identified as those with a value of 1 in the binary image and lying within a certain margin (say, 80 pixels) of the mean of the existing pixel coordinates corresponding to each lane line.
 
 This was accomplished by implementing a sliding window approach which searched the image to identify the lane pixels from scratch and then fitting a 2nd order polynomial to fit their positions.                 --- Code cells 19-20
 
-![Alt Text](https://github.com/sbanga16k/Advanced-Lane-Finding/blob/master/output_images/img_lanes_visuals.jpg?raw=true "Lane visualization sliding window")
+![Alt Text](https://github.com/sbanga16k/Advanced-Lane-Finding/blob/master/output_images/img_lanes_visuals.JPG?raw=true "Lane visualization sliding window")
 
 I also implemented a more 'intelligent' sliding window method which used information about the fit obtained from the previous frame to limit the search area for identifying lane pixels and then fit a 2nd polynomial to these lane positions.  
                                                                                         --- Code cells 21-22
 
 The search area is illustrated with the help of the following image:
 
-![Alt Text](https://github.com/sbanga16k/Advanced-Lane-Finding/blob/master/output_images/img_lane_prevfit.jpg?raw=true "Lane search previous fit")
+![Alt Text](https://github.com/sbanga16k/Advanced-Lane-Finding/blob/master/output_images/img_lane_prevfit.JPG?raw=true "Lane search previous fit")
 
 
 ### Step 6: Calculation of lane curvature and position of the vehicle relative to lane center
@@ -104,7 +104,7 @@ The code for plotting the polygon corresponding to the area between the lanes an
 
 An example image is depicted below:
 
-![Alt Text](https://github.com/sbanga16k/Advanced-Lane-Finding/blob/master/output_images/img_final.jpg?raw=true "Lane projected onto image")
+![Alt Text](https://github.com/sbanga16k/Advanced-Lane-Finding/blob/master/output_images/img_final.JPG?raw=true "Lane projected onto image")
 
 
 ## Pipeline (video)
