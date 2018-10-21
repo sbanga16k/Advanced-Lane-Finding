@@ -113,8 +113,10 @@ A class was implemented for lane detection for video stream. It served to store 
 
 The video file is generated using `VideoFileClip` function of `moveipy.editor` module. It is embedded here as:
 
-<video width="320" height="240" controls>
-  <source src="project_video_output.mp4" type="video/mp4">
+[![Watch the video](https://github.com/sbanga16k/Advanced-Lane-Finding/blob/master/Video_output_thumbnail.png?raw=true)](https://github.com/sbanga16k/Advanced-Lane-Finding/blob/master/project_video_output.mp4)
+
+<video width="640" height="360" controls>
+  <source src=""https://github.com/sbanga16k/Advanced-Lane-Finding/blob/master/project_video_output.mp4" type="video/mp4">
 </video>
 
 ### Discussion
