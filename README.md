@@ -109,14 +109,13 @@ An example image is depicted below:
 
 ## Pipeline (video)
 
-A class was implemented for lane detection for video stream. It served to store attributes related to coefficients representing polynomial fit for each of the lanes and the mean coordinates for the lanes. The code for processing the frames in the video in code cell with label 42. It stacks the various elements of the pipeline discussed above and employs the 'intelligent' sliding window implementation to exploit information about lane line detections in previous frames of the video.
+A class was implemented for lane detection for video stream. It served to store attributes related to coefficients representing polynomial fit for each of the lanes and the mean coordinates for the lanes. The code for processing the frames in the video in code cell 42. It stacks the various elements of the pipeline discussed above and employs the 'intelligent' sliding window implementation to exploit information about lane line detections in previous frames of the video.
 
-The video file is embedded here:
+The video file is generated using `VideoFileClip` function of `moveipy.editor` module. It is embedded here as:
 
-<figure class="video_container">
-  <iframe src= "https://github.com/sbanga16k/Advanced-Lane-Finding/blob/master/project_video_output.mp4" frameborder="0" allowfullscreen="true"> </iframe>
-</figure>
-
+<video width="320" height="240" controls>
+  <source src="project_video_output.mp4" type="video/mp4">
+</video>
 
 ### Discussion
 
