@@ -29,7 +29,7 @@ I then use the output 'obj_pts' and 'img_pts' to compute the camera calibration 
 
 For all of the following steps, I chose to visualize the various steps of the pipeline using the following test image:
 
-![Alt Text](https://github.com/sbanga16k/Advanced-Lane-Finding/blob/master/output_images/img_test_car.JPG?raw=true "Car test image")
+![Alt Text](https://github.com/sbanga16k/Advanced-Lane-Finding/blob/master/output_images/img_test_car.jpg?raw=true "Car test image")
 
 The result obtained after distortion correction of the test image is depicted below: 
 
