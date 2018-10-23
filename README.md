@@ -60,11 +60,11 @@ The code for my perspective transform is encapsulated inside a function called `
 
 I chose to hardcode the source and destination points since the position of the car with respect to the lane remained constant throughout the video stream. This resulted in the following source and destination points:
 
-Source      Destination
-500, 475    100, 0
-800, 475    1180, 720
-1250, 50    1180, 0
-50,  720    100, 720
+&nbsp; &nbsp; Source &nbsp; &nbsp; Destination <br />
+&nbsp; &nbsp; 500, 475 &nbsp; &nbsp; 100, 0 <br />
+&nbsp; &nbsp; 800, 475 &nbsp; &nbsp; 1180, 720 <br />
+&nbsp; &nbsp; 1250, 50 &nbsp; &nbsp; 1180, 0 <br />
+&nbsp; &nbsp; 50,  720 &nbsp; &nbsp; &nbsp; 100, 720 <br />
 
 I validated the correctness of my perspective transform implementation by drawing the src and dst points onto a test image and its warped counterpart to verify if the lane lines appear parallel in the warped image. This is depicted below:
 
